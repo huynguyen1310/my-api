@@ -35,7 +35,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return responder()->success(Post::create($request->all()))->respond();
     }
 
     /**
