@@ -22,3 +22,9 @@ Route::post('register', 'UserController@register');
 
 
 Route::middleware('auth:api')->resource('posts', 'PostController');
+
+Route::fallback(function(){
+    // return response()->json([
+    //     'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+    return responder()->error('Not Found', 'Not found')->respond(404);
+});
