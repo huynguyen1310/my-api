@@ -7,10 +7,12 @@ use App\User;
 use Faker\Generator as Faker;
 
 $factory->define(Post::class, function (Faker $faker) {
+    $user = factory(User::class)->create();
+
     return [
         'title' => $faker->title(),
         'body' => $faker->paragraph(),
-        'user_id' => factory(User::class)->create()->id,
-        'created_by' => factory(User::class)->create()->name,
+        'user_id' => '1',
+        'created_by' => 'admin',
     ];
 });

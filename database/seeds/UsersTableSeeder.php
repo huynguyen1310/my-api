@@ -1,5 +1,6 @@
 <?php
 
+use App\Comment;
 use App\Post;
 use App\User;
 use Illuminate\Database\Seeder;
@@ -13,8 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class, 10)->create()->each(function ($user) {
-            $user->posts()->save(factory(Post::class)->make());
-        });
+        // factory(User::class, 10)->create()->each(function ($user) {
+        //     $user->posts()->save(factory(Post::class)->make());
+        //     $user->comments()->save(factory(Comment::class)->make());
+        // });
+
+        factory(User::class)->create();
+
     }
 }

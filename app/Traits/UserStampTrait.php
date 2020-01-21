@@ -14,12 +14,12 @@ trait UserStampTrait
             $model->created_by = Auth::user()->name;
         });
 
-        static::updating(function (Post $post) {
-            $post->updated_by = Auth::user()->name;
+        static::updating(function ($model) {
+            $model->updated_by = Auth::user()->name;
         });
 
-        static::deleting(function (Post $post) {
-            $post->deleted_by = Auth::user()->name;
+        static::deleting(function ($model) {
+            $model->deleted_by = Auth::user()->name;
         });
     }
 }

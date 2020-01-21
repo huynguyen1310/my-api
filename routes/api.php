@@ -22,6 +22,8 @@ Route::post('register', 'UserController@register');
 
 
 Route::middleware('auth:api')->resource('posts', 'PostController');
+Route::middleware('auth:api')->resource('comments', 'CommentController');
+
 
 Route::fallback(function(){
     // return response()->json([
